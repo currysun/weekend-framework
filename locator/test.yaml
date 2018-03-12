@@ -1,0 +1,13 @@
+登录链接:
+  type:id
+  value:login
+用户名:
+  type:xpath
+  value:"//input[@name='pwuser']"
+密码:
+  type:xpath
+  value:"//table//tr[?sku?]//td[?]"
+登录按钮名:
+  type:xpath
+  value:"//button[@name='submit']"
+  

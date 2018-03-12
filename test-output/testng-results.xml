@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[the browser is : chrome]]>
+    </line>
+    <line>
+      <![CDATA[the waitTime is : 20]]>
+    </line>
+    <line>
+      <![CDATA[chromestart successfully]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="13401" started-at="2018-03-12T17:45:40Z" finished-at="2018-03-12T17:45:54Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="13401" started-at="2018-03-12T17:45:40Z" finished-at="2018-03-12T17:45:54Z">
+      <class name="com.test.testcases.AssignmentDemo1">
+        <test-method status="PASS" signature="initialDriver()[pri:0, instance:com.test.testcases.AssignmentDemo1@458ad742]" name="initialDriver" is-config="true" duration-ms="2602" started-at="2018-03-12T17:45:40Z" finished-at="2018-03-12T17:45:43Z">
+        </test-method> <!-- initialDriver -->
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.test.testcases.AssignmentDemo1@458ad742]" name="loginTest" duration-ms="8474" started-at="2018-03-12T17:45:43Z" finished-at="2018-03-12T17:45:52Z">
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="close()[pri:0, instance:com.test.testcases.AssignmentDemo1@458ad742]" name="close" is-config="true" duration-ms="2315" started-at="2018-03-12T17:45:52Z" finished-at="2018-03-12T17:45:54Z">
+        </test-method> <!-- close -->
+      </class> <!-- com.test.testcases.AssignmentDemo1 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
