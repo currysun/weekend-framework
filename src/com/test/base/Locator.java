@@ -27,7 +27,7 @@ public class Locator {
 	
 	public Locator() {
 		
-		yamlFile="test";
+		yamlFile=this.getClass().getSimpleName();
 		locators=this.loadYamlFile(yamlFile);
 	}
 	

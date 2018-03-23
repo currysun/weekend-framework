@@ -15,6 +15,7 @@ public class Page2 extends Locator {
 	private WebDriver driver;
 	
 	public Page2(WebDriver driver) {
+		//super();
 		this.driver=driver;
 	}
 	

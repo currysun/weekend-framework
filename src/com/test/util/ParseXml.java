@@ -1,6 +1,9 @@
 package com.test.util;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.xmlbeans.impl.xb.xmlconfig.ConfigDocument.Config;
 import org.dom4j.Document;
@@ -46,19 +49,44 @@ public class ParseXml {
 		}
 		
 	}
-	public void getElement() {
-		Element element=(Element) document.selectSingleNode("/config/browser");
-		System.out.println(element.getText());
-	}
 	
 	public String getElementText(String configXml) {
 		Element element=(Element) document.selectSingleNode(configXml);
 		return element.getText();
 	}
 	
-	public static void main(String[] args) {
-		ParseXml px=new ParseXml("config/config.xml");
-		px.getElement();
+	public Element getElementObject(String elementPath) {
+		Element element = null;
+		try{
+			element = (Element) document.selectSingleNode(elementPath);
+		}catch(Exception e){
+			log.info("path: " + elementPath + "不存在");
+			throw new DefinedException("path: " + elementPath + "不存在");
+		}
+		return element;
+	}	
+	
+	@SuppressWarnings("unchecked")
+	public List<Element> getElementObjects(String elementPath) {
+		return document.selectNodes(elementPath);
 	}
 	
+	public List<Element> getChildrenElements(String elementPath){
+		return this.getElementObjects(elementPath+"/*");
+	}
+	
+	@SuppressWarnings("unchecked")
+	public Map<String, String> getChildrenInfoByElement(Element element){
+		Map<String, String> map = new HashMap<String, String>();
+		List<Element> children = element.elements();
+		for (Element e : children) {
+			map.put(e.getName(), e.getText());
+		}
+		return map;
+	}
+	
+	public static void main(String[] args) {
+		ParseXml px=new ParseXml("config/config.xml");
+		System.out.println(px.getElementText("config/browser"));
+	}
 }

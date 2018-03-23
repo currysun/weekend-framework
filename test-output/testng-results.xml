@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="2" total="2" passed="0">
   <reporter-output>
     <line>
       <![CDATA[the browser is : chrome]]>
@@ -10,19 +10,120 @@
     <line>
       <![CDATA[chromestart successfully]]>
     </line>
+    <line>
+      <![CDATA[chromestart successfully]]>
+    </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="13401" started-at="2018-03-12T17:45:40Z" finished-at="2018-03-12T17:45:54Z">
+  <suite name="Default suite" duration-ms="16405" started-at="2018-03-21T19:20:00Z" finished-at="2018-03-21T19:20:16Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="13401" started-at="2018-03-12T17:45:40Z" finished-at="2018-03-12T17:45:54Z">
-      <class name="com.test.testcases.AssignmentDemo1">
-        <test-method status="PASS" signature="initialDriver()[pri:0, instance:com.test.testcases.AssignmentDemo1@458ad742]" name="initialDriver" is-config="true" duration-ms="2602" started-at="2018-03-12T17:45:40Z" finished-at="2018-03-12T17:45:43Z">
+    <test name="Default test" duration-ms="16405" started-at="2018-03-21T19:20:00Z" finished-at="2018-03-21T19:20:16Z">
+      <class name="com.test.testcases.AddNewLog">
+        <test-method status="PASS" signature="initialDriver()[pri:0, instance:com.test.testcases.AddNewLog@4de8b406]" name="initialDriver" is-config="true" duration-ms="2726" started-at="2018-03-21T19:20:00Z" finished-at="2018-03-21T19:20:03Z">
         </test-method> <!-- initialDriver -->
-        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.test.testcases.AssignmentDemo1@458ad742]" name="loginTest" duration-ms="8474" started-at="2018-03-12T17:45:43Z" finished-at="2018-03-12T17:45:52Z">
-        </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.test.testcases.AssignmentDemo1@458ad742]" name="close" is-config="true" duration-ms="2315" started-at="2018-03-12T17:45:52Z" finished-at="2018-03-12T17:45:54Z">
+        <test-method status="FAIL" signature="testcase01(java.util.Map)[pri:0, instance:com.test.testcases.AddNewLog@4de8b406]" name="testcase01" duration-ms="3698" started-at="2018-03-21T19:20:03Z" data-provider="providerMethod" finished-at="2018-03-21T19:20:06Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=sx65641633, title=title curry, content=1234, username=currysun}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Verify title value expected:<title> but was:<title curry>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Verify title value expected:<title> but was:<title curry>
+	at org.testng.Assert.fail(Assert.java:89)
+	at org.testng.Assert.failNotEquals(Assert.java:489)
+	at org.testng.Assert.assertEquals(Assert.java:118)
+	at org.testng.Assert.assertEquals(Assert.java:171)
+	at com.test.pages.ActionPage.checkMylog(ActionPage.java:45)
+	at com.test.testcases.AddNewLog.testcase01(AddNewLog.java:45)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:702)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:894)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1219)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:768)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:87)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1188)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1113)
+	at org.testng.TestNG.run(TestNG.java:1025)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+        </test-method> <!-- testcase01 -->
+        <test-method status="PASS" signature="close()[pri:0, instance:com.test.testcases.AddNewLog@4de8b406]" name="close" is-config="true" duration-ms="638" started-at="2018-03-21T19:20:07Z" finished-at="2018-03-21T19:20:07Z">
         </test-method> <!-- close -->
-      </class> <!-- com.test.testcases.AssignmentDemo1 -->
+        <test-method status="PASS" signature="initialDriver()[pri:0, instance:com.test.testcases.AddNewLog@4de8b406]" name="initialDriver" is-config="true" duration-ms="2233" started-at="2018-03-21T19:20:07Z" finished-at="2018-03-21T19:20:10Z">
+        </test-method> <!-- initialDriver -->
+        <test-method status="FAIL" signature="testcase01(java.util.Map)[pri:0, instance:com.test.testcases.AddNewLog@4de8b406]" name="testcase01" duration-ms="3453" started-at="2018-03-21T19:20:10Z" data-provider="providerMethod" finished-at="2018-03-21T19:20:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=sx65641633, title=tomphson, content=11, username=currysun}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Verify title value expected:<title> but was:<tomphson>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Verify title value expected:<title> but was:<tomphson>
+	at org.testng.Assert.fail(Assert.java:89)
+	at org.testng.Assert.failNotEquals(Assert.java:489)
+	at org.testng.Assert.assertEquals(Assert.java:118)
+	at org.testng.Assert.assertEquals(Assert.java:171)
+	at com.test.pages.ActionPage.checkMylog(ActionPage.java:45)
+	at com.test.testcases.AddNewLog.testcase01(AddNewLog.java:45)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:702)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:894)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1219)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:768)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:87)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1188)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1113)
+	at org.testng.TestNG.run(TestNG.java:1025)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+        </test-method> <!-- testcase01 -->
+        <test-method status="PASS" signature="close()[pri:0, instance:com.test.testcases.AddNewLog@4de8b406]" name="close" is-config="true" duration-ms="2842" started-at="2018-03-21T19:20:13Z" finished-at="2018-03-21T19:20:16Z">
+        </test-method> <!-- close -->
+      </class> <!-- com.test.testcases.AddNewLog -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

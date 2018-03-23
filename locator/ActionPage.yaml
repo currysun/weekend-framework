@@ -1,0 +1,37 @@
+ap.mymenu:
+  type:id
+  value:"td_mymenu"
+myLog:
+  type:xpath
+  value:"//li/a/img[@alt='日志']"
+mylog:
+  type:xpath
+  value:"//li/a[text()='我的日志']"
+title:
+  type:xpath
+  value:"//dl/dt/p/a"
+delete:
+  type:xpath
+  value:"//div/dl[1]/dt/a[2]"
+confirm:
+  type:xpath
+  value:"//span/button[text()='确 定']"
+tit:
+  type:className
+  value:"mb10"
+writelog:
+  type:xpath
+  value:"//span/button[text()='写新日志']"
+input:
+  type:id
+  value:"atc_title"
+content:
+  type:tagName
+  value:"div"
+submit2:
+  type:xpath
+  value:"//span/button[@name='Submit']"
+close:
+  type:id
+  value:"close"
+

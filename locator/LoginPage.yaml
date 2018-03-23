@@ -1,0 +1,13 @@
+login:
+  type:xpath
+  value:"//span/button[@name='head_login']"
+usename:
+  type:xpath
+  value:"//div/input[@class='input']"
+pwd:
+  type:xpath
+  value:"//div/input[@type='password']"
+submit:
+  type:xpath
+  value:"//span/button[@type='submit']"
+  

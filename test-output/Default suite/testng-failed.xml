@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)" preserve-order="true">
     <classes>
-      <class name="com.test.testcases.AssignmentDemo1">
+      <class name="com.test.testcases.AddNewLog">
         <methods>
+          <include name="close"/>
+          <include name="testcase01" invocation-numbers="0 1"/>
           <include name="initialDriver"/>
-          <include name="loginTest"/>
         </methods>
-      </class> <!-- com.test.testcases.AssignmentDemo1 -->
+      </class> <!-- com.test.testcases.AddNewLog -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
