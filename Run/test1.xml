@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" verbose="1" parallel="false" thread-count="1">
+	
+	<listeners>
+		<listener class-name="com.test.listeners.NewReport"/>
+	</listeners>
+	
+    <test name="Test1">
+        <classes>
+            <class name="com.test.testcases.AddNewLog" />
+        </classes>
+    </test>
+</suite>

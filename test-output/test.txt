@@ -1,0 +1,2 @@
+com.test.testcases.AddNewLog testcase01 2018-03-23 17:53:39.458 5080∫¡√Î FAILURE
+com.test.testcases.AddNewLog testcase01 2018-03-23 17:53:48.602 3826∫¡√Î FAILURE
