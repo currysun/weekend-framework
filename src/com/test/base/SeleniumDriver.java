@@ -6,13 +6,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import com.test.info.Config;
+import com.test.info.PropHelper;
 import com.test.util.DefinedException;
 import com.test.util.Log;
 
 public class SeleniumDriver {
 	
-	private static Log log=new Log(Config.class);
+	private static Log log=new Log(PropHelper.class);
 	
 	private WebDriver driver; 
 	
@@ -25,17 +25,17 @@ public class SeleniumDriver {
 	}
 	
 	private void initialDriver() {
-		if("firefox".equals(Config.browser)) {
-			System.setProperty("webdriver.gecko.driver", "files/geckodriver.exe");
+		if("firefox".equals(PropHelper.browser)) {
+			System.setProperty("webdriver.gecko.driver", PropHelper.FIREFOX_DRIVER);
 			driver=new FirefoxDriver();
-		}else if("chrome".equals(Config.browser)){
-			System.setProperty("webdriver.chrome.driver", "files/chromedriver.exe");
+		}else if("chrome".equals(PropHelper.browser)){
+			System.setProperty("webdriver.chrome.driver", PropHelper.CHROME_DRIVER);
 			driver=new ChromeDriver();
 		}else {
-			log.info(Config.browser+"does not supported");
-			throw new DefinedException(Config.browser+"does not supported");
+			log.info(PropHelper.browser+"does not supported");
+			throw new DefinedException(PropHelper.browser+"does not supported");
 		}
-		log.info(Config.browser+"start successfully");
+		log.info(PropHelper.browser+"start successfully");
 		driver.manage().window().maximize();
 
 	}

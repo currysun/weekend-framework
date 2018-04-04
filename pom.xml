@@ -162,9 +162,7 @@
         	<artifactId>xmlbeans</artifactId>
         	<version>2.3.0</version>
         </dependency>
-        
-	
-		
+        	
         <dependency>
     		<groupId>org.jyaml</groupId>
     		<artifactId>jyaml</artifactId>
@@ -177,13 +175,17 @@
    			 <version>0.7</version>
 		</dependency>
 
-
 		<dependency>
     		<groupId>org.seleniumhq.selenium</groupId>
     		<artifactId>selenium-server</artifactId>
     		<version>3.4.0</version>
 		</dependency>
-
+				
+		<dependency>
+   			 <groupId>com.alibaba</groupId>
+        	 <artifactId>fastjson</artifactId>
+    		 <version>1.1.32</version>
+		</dependency>
 		
     </dependencies>
   

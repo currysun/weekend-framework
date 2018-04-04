@@ -8,7 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.test.info.Config;
+import com.test.info.PropHelper;
 
 public class Page2 extends Locator {
 	
@@ -53,7 +53,7 @@ public class Page2 extends Locator {
 		//分析情况 1.元素不存在，2 元素被影藏了 比如AR的 loading status，需要等到loading结束后才能操作页面
 		boolean flag=true;
 		final By by=this.getBy(key);
-		WebDriverWait wait=new WebDriverWait(driver, Config.waitTime);
+		WebDriverWait wait=new WebDriverWait(driver, PropHelper.waitTime);
 		try {
 			flag=wait.until(new ExpectedCondition<Boolean>() {
 				@Override

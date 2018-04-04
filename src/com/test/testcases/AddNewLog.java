@@ -15,17 +15,13 @@ public class AddNewLog extends TestBase{
 	
 	@Test(dataProvider="providerMethod")
 	public void testcase01(Map<String, String> param) {	
-		String url="http://localhost/phpwind/index.php";
-		navigate(url);
-		LoginPage lp=new LoginPage(driver);
-		lp.login(param.get("username"), param.get("password"));
 		Assertions.verifyEquals(2,3,driver);
 		ActionPage ap=new ActionPage(driver);
 		ap.enterMyLogPage();
 		String title=param.get("title");
 		String content=param.get("content");
 		ap.writeLog(title,content);
-		ap.checkMylog("title");
+		ap.checkMylog("title curry");
 		ap.deletelog();
 
 	}
