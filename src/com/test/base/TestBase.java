@@ -15,6 +15,7 @@ import org.testng.annotations.DataProvider;
 import com.test.info.PropHelper;
 import com.test.pages.LoginPage;
 
+
 public class TestBase {
 	
 	protected WebDriver driver;
@@ -34,8 +35,8 @@ public class TestBase {
 		SeleniumDriver selenium=new SeleniumDriver();
 		driver=selenium.getDriver();
 		navigate(PropHelper.URL);	
-		lp=new LoginPage(driver);
-		lp.login(PropHelper.USERNAME, PropHelper.PASSWORD);
+		//lp=new LoginBDPage(driver);
+		//lp.login(PropHelper.USERNAME, PropHelper.PASSWORD);
 	}
 	
 	@DataProvider

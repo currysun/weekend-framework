@@ -1,0 +1,11 @@
+  {
+    "applicationServers": [
+      {
+        "id": 0,
+        "name": "default",
+        "url": "https://pan.baidu.com/share/init?surl=gIyuGoCsELDrM6jEIb4IJg",
+        "username": "rookiesx",
+        "password": "sx19900820"
+      }
+    ]
+  }

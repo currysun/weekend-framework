@@ -1,0 +1,8 @@
+share.input:
+  type:id
+  value:"rrdf6L46"  
+share.submit:
+  type:xpath
+  value:"//span[text()='提取文件']"
+
+

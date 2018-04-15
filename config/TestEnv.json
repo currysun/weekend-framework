@@ -3,9 +3,9 @@
       {
         "id": 0,
         "name": "default",
-        "url": "http://localhost/phpwind/index.php",
+        "url": "http://localhost:8082/phpwind/index.php",
         "username": "currysun",
-        "password": "sx65641633"
+        "password": "password"
       }
     ]
   }

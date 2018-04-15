@@ -1,0 +1,30 @@
+download.save:
+  type:xpath
+  value:"//span[text()='保存到网盘']"
+download.root:
+  type:xpath
+  value:"//span[text()='全部文件']"
+download.subdir:
+  type:xpath
+  value:".//*[@id='fileTreeDialog']/div[2]/div/ul/li/ul/li"
+download.login:
+  type:xpath
+  value:"//a[text()='登录']"
+download.loginSelect:
+  type:id
+  value:"TANGRAM__PSP_10__footerULoginBtn"
+download.username:
+  type:id
+  value:"TANGRAM__PSP_10__userName"
+download.password:
+  type:id
+  value:"TANGRAM__PSP_10__password"
+download.submit:
+  type:id
+  value:"TANGRAM__PSP_10__submit"
+download.closetemp:
+  type:id
+  value:"TANGRAM__PSP_31__closeBtn"
+download.minus:
+  type:className
+  value:"b-in-blk plus icon-operate minus"

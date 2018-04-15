@@ -1,5 +1,7 @@
 package com.test.base;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +14,7 @@ import com.test.info.PropHelper;
 
 public class Page2 extends Locator {
 	
-	private WebDriver driver;
+	protected WebDriver driver;
 	
 	public Page2(WebDriver driver) {
 		//super();
@@ -28,8 +30,21 @@ public class Page2 extends Locator {
 		}
 	}
 	
+	private List<WebElement> getElementLocators(String key,String...replacement) {
+		By by=this.getBy(key,replacement);
+		if(this.waitToDisplayed(by)) {
+			return driver.findElements(by);
+		}else {
+			return null;
+		}
+	}
+	
 	public WebElement getElement(String key,String... replacement) {
 		return this.getElementLocator(key,replacement);
+	}
+	
+	public List<WebElement> getElements(String key,String... replacement) {
+		return this.getElementLocators(key,replacement);
 	}
 	
 	public boolean waitToDisplayed(final By by) {

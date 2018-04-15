@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -24,6 +25,8 @@ public class PropHelper {
 
 	private final static Properties properties = new Properties();
 
+	private final static ApplicationServers as=new ApplicationServers();
+	
 	public final static String browser;
 
 	// public final static String FIREFOX_DRIVER;
@@ -61,10 +64,10 @@ public class PropHelper {
 		// FIREFOX_DRIVER=properties.getProperty("path.webdriver.firefox");
 		CHROME_DRIVER = properties.getProperty("path.webdriver.chrome");
 		SERVER_INFO = properties.getProperty("server.info");
-		List<String> list=getServersInfoJson(SERVER_INFO);
-		URL=list.get(0);
-		USERNAME=list.get(1);
-		PASSWORD=list.get(2);
+		getServersInfoJson(SERVER_INFO);
+		URL=as.getUrl();
+		USERNAME=as.getUsername();
+		PASSWORD=as.getPassword();
 	}
 
 	public static void getProrerties() {
@@ -78,55 +81,44 @@ public class PropHelper {
 		}
 	}
 
-	public static List<String> getServersInfoJson(String json) {
+	public static void getServersInfoJson(String json) {
 		
-		List<String> list=new ArrayList<String>();
+		List<Object> list=new ArrayList<>();
 		InputStream inputStream;
 		try {
 			inputStream = new FileInputStream("config/"+json);
 			String text = IOUtils.toString(inputStream, "utf8");
-			//System.out.println(text);
-			// 把字符串转为Json对象，这是因为我的json数据首先是json对象
+			Field[] fields=ApplicationServers.class.getDeclaredFields();
 			JSONObject jobj = JSON.parseObject(text);
-			// 然后是jsonArray，可以根据我的json数据知道
 			JSONArray arr = jobj.getJSONArray("applicationServers");
-			// 根据Bean类的到每一个json数组的项
 			List<ApplicationServers> listBeans = JSON.parseArray(arr.toString(), ApplicationServers.class);
 			// 遍历
 			for (ApplicationServers bean : listBeans) {
+				list.add(bean.getId());
+				list.add(bean.getName());
 				list.add(bean.getUrl());
 				list.add(bean.getUsername());
 				list.add(bean.getPassword());
 			}
+			
+			for (int i=0;i<fields.length;i++) {
+				try {
+					fields[i].setAccessible(true);
+					fields[i].set(as, list.get(i));
+				} catch (IllegalArgumentException | IllegalAccessException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
-		return list;
+		
 
 	}
-/*	public static List<String> getServersInfoJson(String json) {
-		JSONReader reader;
-		List<String> list=new ArrayList<String>();
-		try {
-			reader = new JSONReader(new FileReader("config/" + json));
-			reader.startArray();
-			while (reader.hasNext()) {
-				ApplicationServers vo = reader.readObject(ApplicationServers.class);
-				list.add(vo.getUrl());
-				list.add(vo.getUsername());
-				list.add(vo.getPassword());
-			}
-			reader.endArray();
-			reader.close();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return list;
-		
-	}
-*/
+
 	private static void load(String filePath) {
 		FileInputStream fis;
 		try {
@@ -155,7 +147,9 @@ public class PropHelper {
 		getProrerties();
 		String txt = System.getProperty("config.prop", "config.properties");
 		System.out.println("config/" + txt);
-
+		System.out.println(PASSWORD);
+		System.out.println(URL);
+		System.out.println(USERNAME);
 	}
 
 }
