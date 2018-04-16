@@ -7,6 +7,12 @@ download.root:
 download.subdir:
   type:xpath
   value:".//*[@id='fileTreeDialog']/div[2]/div/ul/li/ul/li"
+download.subdirlist:
+  type:xpath
+  value:".//*[@id='fileTreeDialog']/div[2]/div/ul/li/ul/li[?]"
+download.selectAll:
+  type:xpath
+  value:"//div[@class='xGLMIab']/ul[1]//span[@class='zbyDdwb']"
 download.login:
   type:xpath
   value:"//a[text()='登录']"

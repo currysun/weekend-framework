@@ -10,7 +10,7 @@ public class TestBaiduClould extends TestBase{
 
 	@Test
 	public void testBaiduCloud() {
-		String password="eobb";
+		String password="0pwt";
 		BDSharePage sharePage=new BDSharePage(driver);
 		BDDownloadPage download=sharePage.submitFile(password);
 		download.saveToCloud();

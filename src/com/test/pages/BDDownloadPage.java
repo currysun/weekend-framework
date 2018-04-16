@@ -21,14 +21,17 @@ public class BDDownloadPage extends Page2{
 		this.getElement("download.password").sendKeys("sx19900820");
 		this.getElement("download.submit").click();
 		this.getElement("download.closetemp").click();
+		this.getElement("download.selectAll").click();	
 		this.getElement("download.save").click();
 	}
 	
 	public void listAllFile() {
 		List<WebElement> lists=this.getElements("download.subdir");
+		
 		int nodes=this.getElements("download.subdir").size();
 		for(int i=1;i<=nodes;i++) {
-			lists.get(i).click();
+			WebElement list=this.getElement("download.subdirlist",String.valueOf(i));
+			list.click();
 			if(isDirectory()) {
 				listAllFile();
 			
